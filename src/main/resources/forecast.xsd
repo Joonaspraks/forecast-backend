@@ -1,0 +1,79 @@
+ <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="forecasts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="forecast">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="night">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="phenomenon"/>
+                                        <xs:element type="xs:integer" name="tempmin"/>
+                                        <xs:element type="xs:integer" name="tempmax"/>
+                                        <xs:element type="xs:string" name="text"/>
+                                        <xs:element maxOccurs="unbounded" name="place">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="name"/>
+                                                    <xs:element type="xs:string" name="phenomenon"/>
+                                                    <xs:element type="xs:integer" name="tempmin"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" name="wind">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="name"/>
+                                                    <xs:element type="xs:string" name="direction"/>
+                                                    <xs:element type="xs:integer" name="speedmin"/>
+                                                    <xs:element type="xs:integer" name="speedmax"/>
+                                                    <xs:element type="xs:string" name="gust"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="sea"/>
+                                        <xs:element type="xs:string" name="peipsi"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="day">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="phenomenon"/>
+                                        <xs:element type="xs:integer" name="tempmin"/>
+                                        <xs:element type="xs:integer" name="tempmax"/>
+                                        <xs:element type="xs:string" name="text"/>
+                                        <xs:element maxOccurs="unbounded" name="place">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="name"/>
+                                                    <xs:element type="xs:string" name="phenomenon"/>
+                                                    <xs:element type="xs:integer" name="tempmax"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" name="wind">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="name"/>
+                                                    <xs:element type="xs:string" name="direction"/>
+                                                    <xs:element type="xs:integer" name="speedmin"/>
+                                                    <xs:element type="xs:integer" name="speedmax"/>
+                                                    <xs:element type="xs:string" name="gust"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="sea"/>
+                                        <xs:element type="xs:string" name="peipsi"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="date" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
