@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yotproov.client.ForecastClient;
+import com.yotproov.client.ForecastFeignClient;
 import com.yotproov.xmlConversion.XmlConverter;
 
 import generated.Forecasts;
@@ -19,16 +20,18 @@ public class ForecastController {
 
     @Autowired
     ForecastClient forecastClient;
+    @Autowired
+    ForecastFeignClient forecastFeignClient;
 
     @GetMapping()
     public ResponseEntity<Forecasts> getForecast() {
-        Forecasts forecasts = forecastClient.getForecast();
+        Forecasts forecasts = forecastFeignClient.getForecast();
         return new ResponseEntity<>(forecasts, HttpStatus.OK);
     }
 
     @GetMapping(path = "/observations", produces = "application/json;charset=UTF-8")
     public ResponseEntity<Observations> getObservations() {
-        Observations observations = forecastClient.getObservations();
+        Observations observations = forecastFeignClient.getObservations();
         return new ResponseEntity<>(observations, HttpStatus.OK);
     }
 
