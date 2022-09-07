@@ -1,0 +1,3 @@
+# forecast-backend
+
+./gradlew bootRun
