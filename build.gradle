@@ -19,6 +19,7 @@ dependencies {
     developmentOnly "org.springframework.boot:spring-boot-devtools"
     implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
     developmentOnly "org.springframework.boot:spring-boot-devtools"
+}
 ext {
     set("springCloudVersion", "2021.0.3")
 }
